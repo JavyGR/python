@@ -28,10 +28,10 @@ class Test:
         assert self.tvl.__str__() == "Power = True, Channel = 0, Volume = 1"
 
         self.tvl.power()
-        self.tvl.muted()
+        self.tvl.mute()
         assert self.tvl.__str__() == "Power = False, Channel = 0, Volume = 1"
 
-        self.tvl.muted()
+        self.tvl.mute()
         assert self.tvl.__str__() == "Power = False, Channel = 0, Volume = 1"
 
     def test_channel_up(self):
@@ -49,11 +49,11 @@ class Test:
 
     def test_channel_down(self):
         self.tvl.channel_down()
-        assert self.tvl.__str__() == "Powe = False, Channel = 0, Volume = 0"
+        assert self.tvl.__str__() == "Power = False, Channel = 0, Volume = 0"
 
         self.tvl.power()
         self.tvl.channel_down()
-        assert self.tvl.__str__() == "Power = True, Channel = 3, Volume 0"
+        assert self.tvl.__str__() == "Power = True, Channel = 3, Volume = 0"
 
     def test_volume_up(self):
         self.tvl.volume_up()
